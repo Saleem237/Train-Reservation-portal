@@ -1,0 +1,27 @@
+body{
+
+    background:#eef2f7;
+
+    font-family:Arial, Helvetica, sans-serif;
+
+}
+
+.card{
+
+    border:none;
+
+    border-radius:12px;
+
+}
+
+.table{
+
+    vertical-align:middle;
+
+}
+
+.btn{
+
+    border-radius:8px;
+
+}

@@ -1,0 +1,39 @@
+body {
+    font-family: "Segoe UI", Arial, sans-serif;
+    background: linear-gradient(135deg, #edf4ff, #f8fbff);
+}
+
+.payment-card {
+    border-radius: 24px;
+    overflow: hidden;
+}
+
+.payment-amount-box {
+    border-radius: 18px;
+    background: linear-gradient(135deg, #eff6ff, #ffffff);
+    border: 1px solid #dbe7ff;
+}
+
+.payment-panel {
+    background: #fff;
+    border: 1px solid #d7e4f7;
+    border-radius: 16px;
+    padding: 16px;
+}
+
+input,
+select {
+    height: 48px !important;
+    border-radius: 12px !important;
+}
+
+button {
+    border-radius: 14px;
+    font-size: 18px;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 12px;
+    }
+}

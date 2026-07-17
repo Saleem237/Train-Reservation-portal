@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Admin Dashboard | Train Reservation Portal</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+    <link rel="stylesheet" href="css/admin-dashboard.css">
+
+</head>
+
+<body>
+
+<div class="wrapper">
+
+    <!-- Sidebar -->
+
+    <div class="sidebar">
+
+        <div class="logo">
+
+            <i class="fa-solid fa-train"></i>
+
+            <h3>Rail Admin</h3>
+
+        </div>
+
+        <ul>
+
+            <li class="active">
+                <a href="admin-dashboard.html">
+                    <i class="fa-solid fa-house"></i>
+                    Dashboard
+                </a>
+            </li>
+
+            <li>
+                <a href="manage-trains.html">
+                    <i class="fa-solid fa-train"></i>
+                    Trains
+                </a>
+            </li>
+
+            <li>
+                <a href="manage-users.html">
+                    <i class="fa-solid fa-users"></i>
+                    Users
+                </a>
+            </li>
+
+            <li>
+                <a href="manage-bookings.html">
+                    <i class="fa-solid fa-ticket"></i>
+                    Bookings
+                </a>
+            </li>
+
+            <li>
+                <a href="index.html">
+                    <i class="fa-solid fa-right-from-bracket"></i>
+                    Logout
+                </a>
+            </li>
+
+        </ul>
+
+    </div>
+
+    <!-- Main Content -->
+
+    <div class="main">
+
+        <!-- Navbar -->
+
+        <nav class="navbar navbar-light bg-white shadow-sm rounded mb-4">
+
+            <div class="container-fluid">
+
+                <h3 class="m-0">
+
+                    Train Reservation Dashboard
+
+                </h3>
+
+                <span class="badge bg-success fs-6">
+
+                    Administrator
+
+                </span>
+
+            </div>
+
+        </nav>
+
+        <!-- Cards -->
+
+        <div class="row g-4">
+
+            <div class="col-lg-4 col-md-6">
+
+                <div class="dashboard-card blue">
+
+                    <div>
+
+                        <h2 id="totalUsers">0</h2>
+
+                        <p>Total Users</p>
+
+                    </div>
+
+                    <i class="fa-solid fa-users"></i>
+
+                </div>
+
+            </div>
+
+            <div class="col-lg-4 col-md-6">
+
+                <div class="dashboard-card green">
+
+                    <div>
+
+                        <h2 id="totalTrains">0</h2>
+
+                        <p>Total Trains</p>
+
+                    </div>
+
+                    <i class="fa-solid fa-train"></i>
+
+                </div>
+
+            </div>
+
+            <div class="col-lg-4 col-md-6">
+
+                <div class="dashboard-card orange">
+
+                    <div>
+
+                        <h2 id="totalBookings">0</h2>
+
+                        <p>Total Bookings</p>
+
+                    </div>
+
+                    <i class="fa-solid fa-ticket"></i>
+
+                </div>
+
+            </div>
+
+            <div class="col-lg-4 col-md-6">
+
+                <div class="dashboard-card red">
+
+                    <div>
+
+                        <h2 id="cancelledBookings">0</h2>
+
+                        <p>Cancelled</p>
+
+                    </div>
+
+                    <i class="fa-solid fa-ban"></i>
+
+                </div>
+
+            </div>
+
+            <div class="col-lg-4 col-md-6">
+
+                <div class="dashboard-card purple">
+
+                    <div>
+
+                        <h2 id="availableSeats">0</h2>
+
+                        <p>Available Seats</p>
+
+                    </div>
+
+                    <i class="fa-solid fa-chair"></i>
+
+                </div>
+
+            </div>
+
+            <div class="col-lg-4 col-md-6">
+
+                <div class="dashboard-card dark">
+
+                    <div>
+
+                        <h2>
+
+                            ₹<span id="totalRevenue">0</span>
+
+                        </h2>
+
+                        <p>Total Revenue</p>
+
+                    </div>
+
+                    <i class="fa-solid fa-indian-rupee-sign"></i>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- Statistics -->
+
+        <div class="row mt-5">
+
+            <div class="col-lg-6">
+
+                <div class="card shadow">
+
+                    <div class="card-header bg-primary text-white">
+
+                        System Statistics
+
+                    </div>
+
+                    <div class="card-body">
+
+                        <canvas id="bookingChart" height="220"></canvas>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="col-lg-6">
+
+                <div class="card shadow">
+
+                    <div class="card-header bg-success text-white">
+
+                        Revenue Statistics
+
+                    </div>
+
+                    <div class="card-body">
+
+                        <canvas id="revenueChart" height="220"></canvas>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- Recent Bookings -->
+
+        <div class="card shadow mt-5">
+
+            <div class="card-header bg-dark text-white">
+
+                Recent Bookings
+
+            </div>
+
+            <div class="card-body">
+
+                <table class="table table-bordered table-hover">
+
+                    <thead class="table-primary">
+
+                        <tr>
+
+                            <th>PNR</th>
+
+                            <th>Passenger</th>
+
+                            <th>Train</th>
+
+                            <th>Coach</th>
+
+                            <th>Seat</th>
+
+                            <th>Status</th>
+
+                            <th>Fare</th>
+
+                        </tr>
+
+                    </thead>
+
+                    <tbody id="bookingTable">
+                        </tbody>
+
+                </table>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- Footer -->
+
+<footer class="text-center mt-5 mb-3">
+
+    <p class="text-muted">
+        © 2026 Train Reservation Portal | Admin Dashboard
+    </p>
+
+</footer>
+
+<!-- Bootstrap -->
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- Chart JS -->
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<!-- Dashboard JS -->
+
+<script src="js/admin-dashboard.js"></script>
+
+</body>
+
+</html>

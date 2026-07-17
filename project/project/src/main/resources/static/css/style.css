@@ -1,0 +1,445 @@
+/* =========================
+   GLOBAL SETTINGS
+========================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    scroll-behavior:smooth;
+}
+
+body{
+
+    font-family:'Poppins',sans-serif;
+    background:#f8fafc;
+    color:#1e293b;
+
+}
+
+
+/* =========================
+   NAVBAR
+========================= */
+
+
+.navbar{
+
+    padding:18px 0;
+    transition:0.4s;
+    background:transparent;
+
+}
+
+
+.navbar.scrolled{
+
+    background:rgba(30,58,138,0.95);
+    backdrop-filter:blur(10px);
+    padding:12px 0;
+
+}
+
+
+.navbar-brand{
+
+    font-size:26px;
+    letter-spacing:1px;
+
+}
+
+
+.nav-link{
+
+    color:white !important;
+    font-weight:500;
+    margin:0 10px;
+    transition:0.3s;
+
+}
+
+
+.nav-link:hover{
+
+    color:#facc15 !important;
+
+}
+
+
+
+.btn-warning{
+
+    background:linear-gradient(
+        45deg,
+        #facc15,
+        #f59e0b
+    );
+
+    border:none;
+    color:#111827;
+    font-weight:600;
+
+}
+
+
+
+.btn-warning:hover{
+
+    transform:translateY(-3px);
+    box-shadow:0 10px 20px rgba(0,0,0,0.2);
+
+}
+
+
+
+/* =========================
+ HERO SECTION
+========================= */
+
+
+.hero{
+
+    height:100vh;
+
+    background-image:
+    url("../images/train-bg.jpg");
+
+    background-size:cover;
+    background-position:center;
+
+    position:relative;
+
+    display:flex;
+    align-items:center;
+
+}
+
+
+
+.overlay{
+
+    position:absolute;
+    inset:0;
+
+    background:
+    linear-gradient(
+        90deg,
+        rgba(15,23,42,0.9),
+        rgba(30,58,138,0.5)
+    );
+
+}
+
+
+
+.hero-content{
+
+    position:relative;
+    z-index:2;
+    color:white;
+
+    animation:slideUp 1.2s ease;
+
+}
+
+
+
+.hero h1{
+
+    font-size:65px;
+    font-weight:700;
+    line-height:1.2;
+
+}
+
+
+.hero p{
+
+    font-size:20px;
+    max-width:650px;
+    margin-top:20px;
+
+}
+
+
+
+.hero .btn{
+
+    padding:14px 30px;
+    border-radius:30px;
+
+}
+
+
+
+/* =========================
+ ANIMATION
+========================= */
+
+
+@keyframes slideUp{
+
+    from{
+
+        opacity:0;
+        transform:translateY(50px);
+
+    }
+
+    to{
+
+        opacity:1;
+        transform:translateY(0);
+
+    }
+
+}
+
+
+
+/* =========================
+ STATISTICS
+========================= */
+
+
+.stats{
+
+    background:
+    linear-gradient(
+        135deg,
+        #2563eb,
+        #1e3a8a
+    );
+
+    color:white;
+    padding:50px 0;
+
+}
+
+
+.stats h2{
+
+    font-size:45px;
+    font-weight:700;
+
+}
+
+
+
+.stats p{
+
+    font-size:18px;
+
+}
+
+
+
+/* =========================
+ FEATURES
+========================= */
+
+
+.feature-card{
+
+
+    background:white;
+
+    padding:35px 20px;
+
+    border-radius:20px;
+
+    text-align:center;
+
+    height:100%;
+
+    box-shadow:
+    0 10px 30px rgba(0,0,0,0.08);
+
+    transition:0.4s;
+
+
+}
+
+
+
+.feature-card:hover{
+
+    transform:translateY(-15px);
+
+    box-shadow:
+    0 20px 40px rgba(37,99,235,0.25);
+
+}
+
+
+
+.feature-card i{
+
+    font-size:45px;
+
+    color:#2563eb;
+
+}
+
+
+
+.feature-card h4{
+
+    margin-top:20px;
+
+    font-weight:600;
+
+}
+
+
+
+
+/* =========================
+ ROUTES
+========================= */
+
+
+.route-card{
+
+
+    background:white;
+
+    padding:35px;
+
+    border-radius:20px;
+
+    text-align:center;
+
+    box-shadow:
+    0 10px 25px rgba(0,0,0,0.08);
+
+    transition:0.4s;
+
+}
+
+
+
+.route-card:hover{
+
+    transform:scale(1.05);
+
+}
+
+
+
+.route-card h4{
+
+    font-weight:600;
+
+}
+
+
+
+.route-card h3{
+
+    color:#2563eb;
+
+    font-size:32px;
+
+}
+
+
+
+/* =========================
+ FOOTER
+========================= */
+
+
+footer{
+
+    background:#0f172a;
+
+    color:white;
+
+    padding:50px 0;
+
+}
+
+
+footer h3{
+
+    color:#60a5fa;
+
+}
+
+
+
+footer p{
+
+    color:#cbd5e1;
+
+}
+
+
+footer hr{
+
+    border-color:#475569;
+
+}
+
+
+
+
+/* =========================
+ BUTTON EFFECT
+========================= */
+
+
+.btn{
+
+    transition:0.3s;
+
+}
+
+
+.btn:hover{
+
+    transform:translateY(-3px);
+
+}
+
+
+
+/* =========================
+ RESPONSIVE
+========================= */
+
+
+@media(max-width:768px){
+
+
+.hero h1{
+
+    font-size:40px;
+
+}
+
+
+.hero p{
+
+    font-size:16px;
+
+}
+
+
+.navbar{
+
+    background:#1e3a8a;
+
+}
+
+
+
+.stats h2{
+
+    font-size:35px;
+
+}
+
+
+}
